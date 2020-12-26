@@ -1,0 +1,29 @@
+This is a MERN stack.
+frontend uses react and redux .
+backend uses nodejs and express.
+connection between react and node is made using axios.
+DB is mongoDB atlas.
+
+for the signUp module react-final-forms has been used with client side validations.
+
+authorization and authentication through passport-local cookie based verification.
+
+The modules that are accessible to the users depends on the type of users.
+
+for a not signedUp user only the home page and signUp page is available.
+
+for a non-admin user has access to all to adding or removing his/her favorite books.
+
+addBooks module is a admin module which allows the admin the fix images for each book using multer since heroku is instance based, a temporary image is used in heroku. 
+
+for an admin user has access to all the non-admin modules plus has the ability to add or remove books and also he/she can remove a non-admin user 
+or make a non-admin user as a admin.
+
+the signUp module ensures that there is not duplicate usernames
+
+
+for testing as an non-admin user just signUp which by default makes the user a non-admin
+
+for admin modules testing:
+USERNAME: test2
+PASSWORD: password
