@@ -16,9 +16,6 @@ const composeValidators = (...validators) => value =>
 
   function Sign(props){
     const onSubmit = postNewUser => async values => {
-
-        //let user = JSON.stringify(values, 0, 2);
-        
         props.postNewUser(values.name, values.username,values.password, values.email);
     
     }

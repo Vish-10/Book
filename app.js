@@ -22,26 +22,17 @@ require('./passportConfig')(passport);
 connectDB();
 const Port = process.env.PORT || 5000;
 
-//app.listen(Port, () => console.log('Server Started', Port));
-
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
-app.use(multer({dest:'./public/images'}).single('photo'));//only this works
+app.use(multer({dest:'./public/images'}).single('photo'));
 app.use(express.json({extended: false}));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
-/*app.use(
-  cors({
-    origin: "http://localhost:3000",
-    credentials: true
-  })
-);*/
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
@@ -57,7 +48,6 @@ app.use((req, res, next) => {
   console.log(req.user);
   next();
 })
-//require('./passportConfig')(passport);
 
 app.use('/', express.static(path.join(__dirname,'client','build')));
 app.use('/users', usersRouter);
